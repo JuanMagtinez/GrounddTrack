@@ -4,17 +4,16 @@ G = 6.67384e-11;
 M = 5.972e+24;
 EarthAngSpeed = 7.2921151467 * 10^(-5); 
 
-%% ALMANAC to KEPLER
+% Here is the conversion from almmanc to kepler
 [~, esec, ~, Eph] = almanac();
 [KEPLER] = Almanac2Kepler(esec,Eph);
 
 
-%% TLE to KEPLERs
-%a, i0, e, LongAN0, RARAN0, w, M0, n, dt
+% Here is the converiosn from tle to  keplers from our case
 time = 261.36220946;
 [esecTLE, GASTdeg,tgdate] = time2toa(time,18,09,2022,09,41,53);
 
-motion = 14.34218537274896; %Correcto
+motion = 14.34218537274896; 
 anomaly = 279.6997; 
 inclination = 86.4026;
 RA_AN = 205.2231;
@@ -23,21 +22,21 @@ ArgP = 80.4424;
 
 [KEPLER_TLE] = TLE2Kepler(esecTLE, GASTdeg, motion, anomaly, inclination, RA_AN, eccentricity, ArgP);
 
-%% KEPLER2ECEF
+% Here we are going to passs from kepler to ecef
 [ECEF] = Kepler2ECEF(KEPLER);
 [ECEF_TLE] = Kepler2ECEF(KEPLER_TLE);
 
 
 
-%% ECEF2LLA
+%%Here is the conversionfrom ecef to lla
 
 [LLA] = ECEF2LLA(ECEF);
 [LLA_TLE] = ECEF2LLA(ECEF_TLE);
 
 
-%% PLOTS
+%% Here we are going to plot the differents plots
 
-%% Plot All Sats
+%Plot of all the sats
 figure(211)
 map = load('world_110m.txt');
 scatter (map(:,1),map(:,2),7.5,'.');
@@ -61,7 +60,7 @@ while t < esec + 1*3600
     timer=timer+1;
 end
 
-%% Plot One Sat
+%% Plot ONLY ONE SATTELITE
 figure(221)
 map = load('world_110m.txt');
 scatter (map(:,1),map(:,2),7.5,'.');
