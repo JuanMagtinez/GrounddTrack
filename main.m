@@ -49,10 +49,10 @@ end
 hold on
 scatter (LLA(:,1),LLA(:,2),'filled');
 xlabel('Longitud[º]')
-ylabel('Latitude[º]')
+ylabel('Latitud[º]')
 grid on
 hold on
-[baseweek, esec, NS, Eph] = almanac();
+[~, esec, ~, Eph] = almanac();
 t = esec + 5*60;
 timer = 1;
 while t < esec + 1*3600
@@ -76,7 +76,7 @@ text(LLA(2,1) + 2, LLA(2,2) + 1, sprintf('%d', Eph(2,1)));
 hold on
 scatter (LLA(2,1),LLA(2,2),'filled');
 xlabel('Longitud[º]')
-ylabel('Latitude[º]')
+ylabel('Latitud[º]')
 grid on
 hold on
 [baseweek, esec, NS, Eph] = almanac();
@@ -101,7 +101,7 @@ scatter (LLA_TLE(1,1), LLA_TLE(1,2),'filled');
 hold on
 text(LLA_TLE(1,1) + 2, LLA_TLE(1,2) + 1, cellstr('IRIDIUM 118'));
 xlabel('Longitud[º]')
-ylabel('Latitude[º]')
+ylabel('Latitud[º]')
 grid on
 hold on
 t_TLE = esecTLE;

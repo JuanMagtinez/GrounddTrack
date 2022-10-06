@@ -16,8 +16,9 @@ for i=1:31
     dt = t - Eph(i,4);
     a = Eph(i,7)^2;
     n = sqrt((G*M)/(a^3));
-    LongAN0 = Eph(i,8) - (EarthAngSpeed * Eph (i,4));
     RARAN0 = Eph(i,6);
+    LongAN0 = Eph(i,8) - (EarthAngSpeed * Eph (i,4));
+    
     w = Eph(i,9);
     M0 = Eph(i,10);
 
