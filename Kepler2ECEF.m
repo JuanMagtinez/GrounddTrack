@@ -1,3 +1,5 @@
+%%Nuria Gonzalez
+%%Juan Martinez
 function[ECEF] = Kepler2ECEF(KEPLER)
 
 %Contant to use for the formulas

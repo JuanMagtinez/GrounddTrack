@@ -1,3 +1,5 @@
+%%Nuria Gonzalez
+%%Juan Martinez
 function [KEPLER] = Almanac2Kepler(esec, Eph)
 
 %Constants to use in te formulas below

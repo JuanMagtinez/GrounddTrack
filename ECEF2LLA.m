@@ -1,3 +1,5 @@
+%%Nuria Gonzalez
+%%Juan Martinez
 function [LLA] = ECEF2LLA(ECEF)
 
 for i=1:size(ECEF,1)

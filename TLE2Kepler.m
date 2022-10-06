@@ -1,3 +1,5 @@
+%%Nuria Gonzalez
+%%Juan Martinez
 function [KEPLER_TLE] = TLE2Kepler(esecTLE, GASTdeg, motion,anomaly,inclination,RA_AN,eccentricity,ArgP)
 
 %Constants for compute

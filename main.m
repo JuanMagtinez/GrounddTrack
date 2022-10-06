@@ -1,3 +1,5 @@
+%%Nuria Gonzalez
+%%Juan Martinez
 close all
 
 G = 6.67384e-11;
@@ -28,7 +30,7 @@ ArgP = 80.4424;
 
 
 
-%%Here is the conversionfrom ecef to lla
+%%Here is the conversion from ecef to lla
 
 [LLA] = ECEF2LLA(ECEF);
 [LLA_TLE] = ECEF2LLA(ECEF_TLE);
